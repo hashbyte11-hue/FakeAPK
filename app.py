@@ -54,7 +54,7 @@ def file_exists_warn(path: str) -> bool:
         return False
     return True
 
-# ---------------- Step 1 ----------------
+# ---------------- Stage 1 ----------------
 st.header("Create dummy APK files for verification")
 if st.button("Create & Check Files"):
     with open("first_code.bin", "wb") as f:
@@ -71,7 +71,7 @@ if st.button("Create & Check Files"):
     with open("second_code.bin", "rb") as f:
         st.download_button("⬇ Download second_code.bin", f.read(), file_name="second_code.bin")
 
-# ---------------- Step 2 ----------------
+# ---------------- Stage 2 ----------------
 st.header("Generating hashes, keys, signatures and a tampered signature for demo")
 if st.button("Generate & Check"):
     if not file_exists_warn("first_code.bin") or not file_exists_warn("second_code.bin"):
@@ -121,7 +121,7 @@ if st.button("Generate & Check"):
         st.download_button("⬇ Download signature.bin (original)", st.session_state.signature, file_name="signature.bin")
         st.download_button("⬇ Download tampered_signature.bin (fake)", st.session_state.tampered_signature, file_name="tampered_signature.bin")
 
-# ---------------- Step 3 ----------------
+# ---------------- Stage 3 ----------------
 st.header("3rd Party computes or chooses a tampered I'")
 choice = st.radio("Which I' should the 3rd party use?", ("Compute from first_code.bin (correct)", "Use Tampered I_tampered (fake)"))
 if st.button("Choose I'"):
@@ -138,7 +138,7 @@ if st.button("Choose I'"):
             with open("first_code.bin", "rb") as f:
                 code_3rdparty = f.read()
             st.session_state.I_prime = hashlib.sha256(code_3rdparty).hexdigest()
-            st.success(f"[3rd PARTY] ✅ Computed I' = {st.session_state.I_prime}")
+            st.success(f"[3rd PARTY] Computed I' = {st.session_state.I_prime}")
 
     if os.path.exists("signature.bin"):
         with open("signature.bin", "rb") as f:
@@ -148,7 +148,7 @@ if st.button("Choose I'"):
     else:
         st.info("signature.bin not found yet — run Step 2.")
 
-# ---------------- Step 4 ----------------
+# ---------------- Stage 4 ----------------
 st.header("Bank Verifies I == I'")
 if st.button("Run Step 4 — Bank Verify"):
     if st.session_state.I_prime is None:
@@ -171,7 +171,7 @@ if st.button("Run Step 4 — Bank Verify"):
         with open("second_code.bin", "rb") as f:
             st.download_button("⬇ Download second_code.bin", f.read(), file_name="second_code.bin")
 
-# ---------------- Step 5 ----------------
+# ---------------- Stage 5 ----------------
 st.header("Final Verification (RSA)")
 sig_choice = st.radio("Which Signature should be used?", ("Original signature.bin", "Tampered tampered_signature.bin"))
 
@@ -195,15 +195,15 @@ if st.button("Run Step 5 — Verify"):
                     hashes.SHA256()
                 )
 
-                # ✅ Save result in session state
+                # Save result in session state
                 st.session_state.signature_valid = True
                 st.success("(RSA) Signature Verified Successfully")
                 st.info("Installation Successful: Key and Signature Verified, APK is Genuine.")
 
             except InvalidSignature:
-                # ❌ Save failed result
+                # Save failed result
                 st.session_state.signature_valid = False
-                st.error("❌ Signature/Key verification failed")
+                st.error("Signature/Key verification failed")
                 st.warning("⚠ Reason: The chosen signature file does not match the APK. Possible tampering detected.")
                 st.error("Installation Failed: Fake APK detected. RSA Verification failed.")
 
@@ -216,7 +216,7 @@ if st.button("Run Step 5 — Verify"):
 st.header("Final Verification & Installation Check")
 
 if st.button("Verify & Install"):
-    # Ensure Step 5 was executed (signature validation)
+    # Ensure Stage 5 was executed (signature validation)
     if "signature_valid" not in st.session_state:
         st.error("Missing Step 5 result (run Step 5 first).")
 
@@ -231,3 +231,4 @@ if st.button("Verify & Install"):
 
 st.markdown("---")
 st.write("Copyright © 2025 HashByte Demo. All rights reserved.")
+
