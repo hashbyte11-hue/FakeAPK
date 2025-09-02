@@ -1,7 +1,11 @@
  **Fake Banking APK Detection**
 
-**Overview**
+ **Demo**
 
+- Google Colab - https://colab.research.google.com/drive/17GTozyCJW6saOeFmj4OELUfSrKMQsYHq#scrollTo=1PkOg-uWFeHv 
+- Deploy Link - https://detect-fake-bank-apk-hash-byte-siliguri-institute-of-technology.streamlit.app/
+
+**Overview**
 An Android Package Kit (APK) is the file format used to distribute and install applications on Android devices.
 In mobile banking, APKs are prime targets for attackers because of the sensitive data they handle.
 
@@ -13,54 +17,32 @@ In mobile banking, APKs are prime targets for attackers because of the sensitive
 **APKs remain vulnerable to threats such as:**
 
 - Unauthorized permissions
-
 - Repackaging
-
 - Reverse Engineering
-
 - Malicious third-party downloads
-
 - 0-Day Exploits
-
-**These attacks often lead to data theft and financial fraud.**
+_These attacks often lead to data theft and financial fraud._
 
 **Proposed Solution**
 
-We propose an approach that ensures APK Security before installation by integrating multiple verification layers:
-
+_We propose an approach that ensures APK Security before installation by integrating multiple verification layers:_
 - Source Authentication → Verify that the APK originates from a trusted source.
-
 - Code Integrity Check → Detect tampering in APK files.
-
 - Digital Signature Verification → Validate the authenticity of the APK.
-
 - Only when all three checks PASS, the APK is installed.
 
 **This guarantees:**
 
-Stronger protection against malicious APK files.
+- Stronger protection against malicious APK files.
+- Reduced cyberattack surface.
+- Increased customer trust in mobile banking applications.
 
-Reduced cyberattack surface.
+**Tech Stack**
 
-Increased customer trust in mobile banking applications.
-
-⚙️ Tech Stack
-
-Backend: Python, Cryptography Library
-
-Frontend: Streamlit (for visualization & demo)
-
-Notebook: Google Colab
-
-Security: RSA, SHA-256
-
-📦 Fake-Banking-APK-Detection
- ┣ 📜 README.md
- ┣ 📜 requirements.txt
- ┣ 📜 backend.py        # Core detection logic
- ┣ 📜 streamlit_ui.py   # Frontend demo
- ┣ 📂 tests             # Unit tests
- ┗ 📂 docs              # Documentation
+- Backend: Python, Cryptography Library
+- Frontend: Streamlit (for visualization & demo)
+- Notebook: Google Colab
+- Security: RSA, SHA-256
 
 **Key Benefits**
 
@@ -69,19 +51,10 @@ Security: RSA, SHA-256
 - Enhances security & trust in mobile banking.
 - Lightweight and scalable solution.
 
-**Demo**
+_**Team**_
 
-Google Colab - https://colab.research.google.com/drive/17GTozyCJW6saOeFmj4OELUfSrKMQsYHq#scrollTo=1PkOg-uWFeHv 
-
-Deploy Link - https://detect-fake-bank-apk-hash-byte-siliguri-institute-of-technology.streamlit.app/
-
-Team 
-
-Amol Kumar (Lead)
-
-Rohini Kumari
-
-Bhaskar Kumar
-
-Masuddar Rahaman
+- Amol Kumar (Lead)
+- Rohini Kumari
+- Bhaskar Kumar
+- Masuddar Rahaman
 
