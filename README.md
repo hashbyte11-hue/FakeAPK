@@ -44,14 +44,6 @@ Reduced cyberattack surface.
 
 Increased customer trust in mobile banking applications.
 
-🏗️ System Workflow
-flowchart TD
-    A[Download APK] --> B[Source Authentication]
-    B --> C[Code Integrity Verification]
-    C --> D[Digital Signature Verification]
-    D -->|All Pass| E[Install APK ✅]
-    D -->|Fail| F[Reject APK ❌]
-
 ⚙️ Tech Stack
 
 Backend: Python, Cryptography Library
