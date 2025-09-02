@@ -26,7 +26,7 @@ with st.sidebar:
     st.markdown("### 👥 Team Members")
     team = [
         "Amol Kumar (Leader)",
-        "Rohini Kurnari",
+        "Rohini Kumari",
         "Bhaskar Kumar",
         "Masuddar Rahaman"
     ]
@@ -231,5 +231,6 @@ if st.button("Verify & Install"):
 
 st.markdown("---")
 st.write("Copyright © 2025 HashByte Demo. All rights reserved.")
+
 
 
