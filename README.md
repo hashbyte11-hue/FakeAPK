@@ -56,7 +56,7 @@ _We propose an approach that ensures APK Security before installation by integra
 _**Team**_
 
 - Amol Kumar (Lead)
-- Rohini Kumari
 - Bhaskar Kumar
+- Rohini Kumari
 - Masuddar Rahaman
 
