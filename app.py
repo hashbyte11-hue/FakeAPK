@@ -81,7 +81,7 @@ if st.button("Generate & Check"):
         st.session_state.J = sha256_hex_file("second_code.bin")
 
         st.session_state.I_tampered = hashlib.sha256(
-            b"This is the First Executable Code of the APK **TAMPERED"
+            b"This is the First Executable Code of the APK **TAMPERED**"
         ).hexdigest()
 
         private_key_obj = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -231,4 +231,5 @@ if st.button("Verify & Install"):
 
 st.markdown("---")
 st.write("Copyright © 2025 HashByte Demo. All rights reserved.")
+
 
