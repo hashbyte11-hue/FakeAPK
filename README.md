@@ -6,6 +6,7 @@
 - Deploy Link - https://detect-fake-bank-apk-hash-byte-siliguri-institute-of-technology.streamlit.app/
 
 **Overview**
+
 An Android Package Kit (APK) is the file format used to distribute and install applications on Android devices.
 In mobile banking, APKs are prime targets for attackers because of the sensitive data they handle.
 
