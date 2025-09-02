@@ -41,7 +41,7 @@ _We propose an approach that ensures APK Security before installation by integra
 
 **Tech Stack**
 
-- Backend: Python, Cryptography Library
+- Backend: Python, Cryptography Packages and Python Built-in library
 - Frontend: Streamlit (for visualization & demo)
 - Notebook: Google Colab
 - Security: RSA, SHA-256
