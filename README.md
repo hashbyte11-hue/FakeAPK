@@ -22,6 +22,7 @@ In mobile banking, APKs are prime targets for attackers because of the sensitive
 - Reverse Engineering
 - Malicious third-party downloads
 - 0-Day Exploits
+  
 _These attacks often lead to data theft and financial fraud._
 
 **Proposed Solution**
