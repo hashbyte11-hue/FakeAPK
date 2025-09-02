@@ -221,16 +221,17 @@ if st.button("Verify & Install"):
         st.error("Missing Step 5 result (run Step 5 first).")
 
     else:
-        # If Step 5 failed → reject installation immediately
+        # If Step 5 failed reject installation 
         if not st.session_state.signature_valid:
             st.error("Tampered Signature Detected! Application installation failed.")
         
         else:
-            # If signature is valid → allow installation
+            # If signature is valid allow installation
             st.success("Verification Successful (RSA Signature Valid). Application can be installed.")
 
 st.markdown("---")
 st.write("Copyright © 2025 HashByte Demo. All rights reserved.")
+
 
 
 
